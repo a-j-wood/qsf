@@ -1,0 +1,21 @@
+Before releasing a new version, go through this checklist:
+
+  - bump doc/VERSION
+  - bump doc/lsm.in
+  - check doc/NEWS is up to date
+  - check doc/spec.in is up to date (changelog)
+  - check manual is up to date
+  - make indent indentclean
+  - make test
+  - make memtest
+  - commit to SVN
+  - wipe build directory, re-run generate.sh and configure
+  - make release
+  - make manhtml | tidy -asxhtml | sed -e '1,/<body>/d' -e '/<\/body>/,$d'
+  - update HTML for todo and news
+  - copy and sign tar.gz and RPMs to HTML directory
+  - upload package to SourceForge
+  - create a new release on SourceForge
+  - upload HTML
+  - check validator results for project page and manual
+  - notify Debian package maintainer
